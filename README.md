@@ -47,7 +47,7 @@ Quando há divergências entre os nomes dos atributos e os nomes dos campos no b
 
 ### Serviços
 - **ProdutoServico**: Classe de serviço responsável pela lógica de negócio relacionada aos produtos. Utiliza o `ProdutoRepositorio` para acessar dados da tabela `produto`.
-- **SimulacaoServico**: Classe de serviço que gerencia a lógica de negócio das simulações de seguro prestamista. Utiliza os repositórios `SimulacaoRepositorio` e `ProdutoRepositorio` para acessar os dados do banco de dados e fornece métodos para validar e calcular uma simulação. Caso os valores não atendam aos critérios de validação, uma exceção é lançada e tratada, retornando uma mensagem de erro para o front-end.
+- **SimulacaoServico**: Classe de serviço que gerencia a lógica de negócio das simulações de seguro prestamista. Utiliza os repositórios `SimulacaoRepositorio` e `ProdutoRepositorio` para acessar os dados do banco de dados e fornece métodos para validar e calcular uma simulação, importante resaltar que, ao ser informado o aniversario do usuario, o sistema ira calcular sua idade e filtrar no banco atravez do `ProdutoRepositorio` todos os produtos que se enquadram nos criteiros de idade, e o sistema ira selecionar o primeiro como produto selecionado. Caso os valores não atendam aos critérios de validação, uma exceção é lançada e tratada, entre eles verificação de cpf, verificação de meses da simulação, atendendo aos criterios de ser menor que 120 e maior que 1, e também tratando outros erros, retornando uma mensagem de erro para o front-end.
 
 ### CalculadoraApplication
 Classe principal que inicia a aplicação e executa a API.
